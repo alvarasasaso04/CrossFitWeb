@@ -1,31 +1,22 @@
 package es.codeurjc.web;
 
-public class Post {
+public class Comment {
 
-	private Long id;
 	private String user;
 	private String title;
 	private String text;
 
-	public Post() {
+	public Comment() {
 
 	}
 
-	public Post(String user, String title, String text) {
+	public Comment(String user, String title, String text) {
 		super();
 		this.user = user;
 		this.title = title;
 		this.text = text;
 	}
 
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(long id) {
-		this.id = id;
-	}
-	
 	public String getUser() {
 		return user;
 	}
@@ -52,7 +43,7 @@ public class Post {
 	
 	@Override
 	public String toString() {
-		return "Post [id="+id+", user=" + user + ", title=" + title + ", text=" + text + "]";
+		return "Comment [user=" + user + ", title=" + title + ", text=" + text + "]";
 	}
 
 }

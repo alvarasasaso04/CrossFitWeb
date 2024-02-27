@@ -1,3 +1,23 @@
+header {
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Separa los elementos a los extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    padding: 0 20px; /* Añade algo de espacio en los extremos */
+    background-color: #8c0505; /* El color de fondo de tu header */
+}
+h1{
+    color: #090000;
+    text-align: center;
+}
+/* Estilos para el título */
+.titulo-fondo {
+    margin: 0; /* Elimina los márgenes por defecto */
+    color: #090000; /* Color del texto para asegurar contraste */
+    flex-grow: 1; /* Permite que el título crezca si es necesario */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 10px 0; /* Añade algo de espacio vertical */
+}
+
 /* Reset básico para eliminar los márgenes y el padding predeterminado */
 ul {
     margin: 0;
@@ -7,12 +27,14 @@ ul {
 
 nav ul {
     display: flex; /* Hace que los elementos de la lista se alineen horizontalmente */
+    list-style: none;
+    padding: 0;
     justify-content: flex-end; /* Alinea los elementos de la lista a la derecha */
     background-color: #333; /* Color de fondo del menú */
 }
 
 nav ul li {
-    margin: 0 20px; /* Añade un espacio horizontal entre los elementos */
+    margin-left: 20px; /* Añade un espacio horizontal entre los elementos */
 }
 
 nav ul li a {
@@ -24,26 +46,349 @@ nav ul li a {
 nav ul li a:hover {
     color: #ddd; /* Cambia el color del texto al pasar el mouse */
 }
-body {
 
+body {
     font-weight: 400;
     font-size: 1rem;
-    font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    background: #f4f4f4;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
-    background-image: url('static/Imagenes/fondo.jpg'); /* Establece la imagen de fondo */
-    background-position: center; /* Centra la imagen de fondo */
-}
-.titulo-fondo {
-    font-family: "Eras Light ITC", sans-serif;
-    background-color: #030949; /* Cambia el color según tus preferencias */
-    color: #b6b6b6; /* Color del texto para asegurar contraste */
-    padding: 10px; /* Añade algo de espacio alrededor del texto */
-    text-align: center; /* Centra el texto dentro del elemento */
+    background-image: url('fondo.jpg'); /* Establece la imagen de fondo */
+    background-position: center center; /* Centra la imagen de fondo */
+    margin-left: 200px;
+    margin-right: 200px;: /* Elimina cualquier margen predeterminado */
+    min-height: 100%;
+    padding: 0;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* Color blanco con opacidad */
+    z-index: -1;
+    margin: 0;
+}
+.content-container {
+    background-color: white; /* Fondo blanco para el contenido */
+    /* Aplica los estilos necesarios para tu diseño, por ejemplo: */
+    margin: 0 auto; /* Centra el contenedor si es necesario */
+    width: 100%; /* O el ancho que prefieras */
+    min-height: 100vh; /* Asegura que el contenedor sea al menos tan alto como la pantalla */
+    position: relative; /* Si vas a posicionar algún hijo de manera absoluta en relación a este */
+    z-index: 2; /* Superior al z-index del pseudo-elemento */
+}
+header, nav, main, footer {
+    position: relative;
+    z-index: 1;
+}
+.cont-menu {
+    display: none; /* Oculta el menú por defecto */
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Estilo para cuando el menú esté activo */
+.cont-menu.active {
+    display: block; /* Muestra el menú */
+}
+.icono-menu {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+}
+
+.line {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+}
+.cont-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.show {
+    display: block;
+}
+.imagen-in {
+    /* Asume que tienes una imagen llamada 'gym-background.jpg' en una carpeta llamada 'images' */
+    background-image: url('ImagenEntrada.jpg');
+
+    /* Asegúrate de que la imagen de fondo cubra toda el área */
+    background-size: initial;
+
+    /* Establece la altura deseada para la imagen de fondo */
+    height: 500px;
+
+    /* Centra y escala la imagen correctamente */
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Posición relativa para el posicionamiento absoluto del texto */
+    position: relative;
+
+}
+
+.texto-imagen {
+    /* Posición absoluta para superponer el texto sobre la imagen */
+    position: absolute;
+
+    /* Posiciona el texto en el centro de la imagen */
+    top: 50%;
+    left: 50%;
+
+    /* Centra el texto con las transformaciones */
+    transform: translate(-50%, -50%);
+
+    /* Estilo del texto */
+    color: #ffffff;
+    text-align: center;
+
+    /* Si deseas, puedes añadir más estilos como sombras para mejorar la legibilidad */
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* Puede que quieras estilizar tus elementos h1 y p más, aquí algunos ejemplos básicos */
+.texto-imagen h1 {
+    margin: 0;
+    font-size: 50px; /* O el tamaño que prefieras */
+    color: #f9f9f9;
+}
+
+.texto-imagen p {
+    margin-top: 20px; /* Espacio entre el h1 y el párrafo */
+    font-size: 20px; /* O el tamaño que prefieras */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.image-section img {
+    width: 50%; /* Adjust the width as necessary */
+    height: auto;
+    margin-right: 20px;
+}
+
+.text-section {
+    width: 100%; /* Adjust the width as necessary */
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.text-section h2 {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #8c0505; /* Use the color you prefer */
+    color: #000000;
+}
+
+.text-section p {
+    margin-bottom: 10px;
+    color: #090000;
+}
+
+.text-section button {
+    background-color: #8c0505; /* Use the color you prefer */
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* You can also add responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Organiza los hijos en una columna */
+        justify-content: center; /* Alinea los hijos al inicio del contenedor */
+        align-items: center; /* Centra los hijos horizontalmente */
+        display: grid;
+        grid-template-columns: 1fr auto; /* la imagen toma el espacio necesario y el texto lo que sobra */
+        gap: 10px;/* Elimina el espacio entre la imagen y el texto */
+    }
+
+    .image-section img,
+    .text-section {
+        width: 100%; /* Usa el ancho completo para ambos, imagen y texto */
+
+    }
+
+    .image-section {
+        max-width: none; /* Permite que la imagen se expanda */
+        overflow: hidden;
+        align-items: center;
+    }
+
+    img {
+        width: max-content; /* Ajusta la imagen para que ocupe el ancho disponible */
+        height: auto; /* Mantiene la relación de aspecto de la imagen */
+        align-self: center;
+    }
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card img {
+    max-width: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.card h3 {
+    color: #8c0505;
+}
+
+.card p {
+    color: #333;
+    font-size: 14px;
+}
+
+.card a {
+    text-decoration: none;
+    color: #8c0505;
+    font-weight: bold;
+}
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.testimonials h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.comentarios-cont {
+    margin-bottom: 20px;
+}
+
+.comentarios {
+    margin-bottom: 10px;
+}
+
+.testimonial-avatar {
+    width: 80px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.comentarios h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.comentarios blockquote {
+    font-style: italic;
+    color: #555;
+}
+
+.comentarios-nav {
+    margin-bottom: 20px;
+}
+
+.nav-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.nav-dot.active {
+    background-color: #333;
+}
+
+.button-comment {
+    background-color: #640426;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.button-comment:hover {
+    background-color: #4cae4c;
+}
+.site-footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.read-more-btn {
+    background-color: #640426;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.read-more-btn:hover {
+    background-color: #1f6404;
+}
 
