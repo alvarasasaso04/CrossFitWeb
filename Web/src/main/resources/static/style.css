@@ -1,0 +1,49 @@
+/* Reset básico para eliminar los márgenes y el padding predeterminado */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Elimina los puntos de los li */
+}
+
+nav ul {
+    display: flex; /* Hace que los elementos de la lista se alineen horizontalmente */
+    justify-content: flex-end; /* Alinea los elementos de la lista a la derecha */
+    background-color: #333; /* Color de fondo del menú */
+}
+
+nav ul li {
+    margin: 0 20px; /* Añade un espacio horizontal entre los elementos */
+}
+
+nav ul li a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white; /* Color del texto de los enlaces */
+    font-weight: bold; /* Hace que el texto sea negrita */
+}
+
+nav ul li a:hover {
+    color: #ddd; /* Cambia el color del texto al pasar el mouse */
+}
+body {
+
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background: #f4f4f4;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    background-image: url('static/Imagenes/fondo.jpg'); /* Establece la imagen de fondo */
+    background-position: center; /* Centra la imagen de fondo */
+}
+.titulo-fondo {
+    font-family: "Eras Light ITC", sans-serif;
+    background-color: #030949; /* Cambia el color según tus preferencias */
+    color: #b6b6b6; /* Color del texto para asegurar contraste */
+    padding: 10px; /* Añade algo de espacio alrededor del texto */
+    text-align: center; /* Centra el texto dentro del elemento */
+}
+
+
