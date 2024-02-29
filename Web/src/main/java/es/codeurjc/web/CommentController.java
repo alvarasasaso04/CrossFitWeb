@@ -59,7 +59,7 @@ public class CommentController {
 	public String deleteComment(@PathVariable int numCom) {
 		if (numCom > 0 && numCom <= comments.size()) {
 			comments.remove(numCom - 1);
-			return "redirect:/comments/deleted";
+			return "deleted_comment";
 		} else {
 			return "redirect:/error";
 		}
