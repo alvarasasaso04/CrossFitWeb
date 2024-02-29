@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CrossFit URJC</title>
+	<link rel="stylesheet" href="/static/css/commentsStyle.css">
+
+</head>
+<body>
+<header>
+	<h1 class="titulo-fondo">CrossFit URJC</h1> <!-- Título de la página antes del menú -->
+	<div class="icono-menu">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
+	<nav>
+		<ul class="cont-menu">
+			<li><a href="#programacion">Programación</a></li>
+			<li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+			<li><a href="#atrevete">Atrévete</a></li>
+			<li><a href="#login">Login</a></li>
+		</ul>
+	</nav>
+	<script src="/static/JS/menu.js"></script>
+</header>
+
+<div class="content-container">
+	<h1>Cuentanos tu experiencia</h1>
+	<section class="testimonials">
+		<h2>Comentarios</h2>
+		<div class="testimonials-container">
+			<!-- Contenedor de comentarios -->
+			<div class="testimonials-scroll">
+				<!-- Suponiendo que estamos iterando sobre cada comentario con Mustache o un motor similar -->
+				{{#comments}}
+				<div class="testimonial">
+					<div class="testimonial-content"><a href="/comments/{{-index}}">
+						<p class="author">{{user}}</p>
+						<p class="message">{{title}}</p>
+					</a>
+					</div>
+				</div>
+				{{/comments}}
+				{{^comments}}
+				<p>No comments yet.</p>
+				{{/comments}}
+			</div>
+		</div>
+	</section>
+	<div>
+		<form action="comments/new" method="post">
+		<p>User: </p>
+		<input type='text' name='user'/>
+		<p>Title:</p>
+		<input type='text' name='title'/>
+		<p>Text:</p>
+		<textarea name='text' rows=5 cols=40></textarea>
+
+		<input type='submit' value='Save'/>
+	</form>
+	</div>
+
+</div>
+
+<footer class="site-footer">
+	<div class="footer-container">
+		<div class="footer-column">
+			<h3>Sobre nosotros</h3>
+			<button class="read-more-btn"><a href="#SobreNosotros">Read More</a></button>
+		</div>
+
+		<div class="footer-column">
+			<h3>Menu</h3>
+			<ul>
+				<li><a href="#Inicio">Inicio</a></li>
+				<li><a href="#programacion">Programación</a></li>
+				<li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+				<li><a href="#atrevete">Atrévete</a></li>
+				<li><a href="#login">Login</a></li>
+			</ul>
+		</div>
+		<div class="footer-column">
+			<h3>Contactanos</h3>
+			<ul>
+				<p>Telefono: XXX-XXX-XXX</p>
+				<p>Instagram: @crossfit.urjc</p>
+			</ul>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

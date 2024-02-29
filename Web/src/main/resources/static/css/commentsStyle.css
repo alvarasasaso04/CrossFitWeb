@@ -9,6 +9,8 @@ h1{
     color: #090000;
     text-align: center;
 }
+
+
 /* Estilos para el título */
 .titulo-fondo {
     margin: 0; /* Elimina los márgenes por defecto */
@@ -54,11 +56,11 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-image: url('fondo.jpg'); /* Establece la imagen de fondo */
+    background-image: url('../imagenes/fondo.jpg'); /* Establece la imagen de fondo */
     background-position: center center; /* Centra la imagen de fondo */
     margin-left: 200px;
     margin-right: 200px;: /* Elimina cualquier margen predeterminado */
-    min-height: 100%;
+min-height: 100%;
     padding: 0;
 }
 
@@ -120,182 +122,120 @@ header, nav, main, footer {
 .show {
     display: block;
 }
-.imagen-in {
-    /* Asume que tienes una imagen llamada 'gym-background.jpg' en una carpeta llamada 'images' */
-    background-image: url('ImagenEntrada.jpg');
-
-    /* Asegúrate de que la imagen de fondo cubra toda el área */
-    background-size: initial;
-
-    /* Establece la altura deseada para la imagen de fondo */
-    height: 500px;
-
-    /* Centra y escala la imagen correctamente */
-    background-position: center;
-    background-repeat: no-repeat;
-
-    /* Posición relativa para el posicionamiento absoluto del texto */
-    position: relative;
-
-}
-
-.texto-imagen {
-    /* Posición absoluta para superponer el texto sobre la imagen */
-    position: absolute;
-
-    /* Posiciona el texto en el centro de la imagen */
-    top: 50%;
-    left: 50%;
-
-    /* Centra el texto con las transformaciones */
-    transform: translate(-50%, -50%);
-
-    /* Estilo del texto */
-    color: #ffffff;
+h2{
+    color: #090000;
     text-align: center;
-
-    /* Si deseas, puedes añadir más estilos como sombras para mejorar la legibilidad */
-    text-shadow: 2px 2px 4px #000000;
+    margin-top: 1em; /* Espacio en la parte superior */
 }
 
-/* Puede que quieras estilizar tus elementos h1 y p más, aquí algunos ejemplos básicos */
-.texto-imagen h1 {
-    margin: 0;
-    font-size: 50px; /* O el tamaño que prefieras */
-    color: #f9f9f9;
+/* Estilos del formulario */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
 }
 
-.texto-imagen p {
-    margin-top: 20px; /* Espacio entre el h1 y el párrafo */
-    font-size: 20px; /* O el tamaño que prefieras */
-}
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
+p {
+    margin: 10px 0;
 }
 
-.image-section img {
-    width: 50%; /* Adjust the width as necessary */
-    height: auto;
-    margin-right: 20px;
+/* Estilos para los elementos del formulario */
+input[type='text'],
+textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0 1em 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    transition: border-color 0.3s;
 }
 
-.text-section {
-    width: 100%; /* Adjust the width as necessary */
-    padding: 40px;
+input[type='text']:focus,
+textarea:focus {
+    border-color: #d64f4f;
+    outline: none; /* Remueve el contorno por defecto en algunos navegadores */
+}
+
+/* Estilos para el botón de enviar */
+input[type='submit'] {
+    background-color: #d64f4f;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%;
     box-sizing: border-box;
 }
 
-.text-section h2 {
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #8c0505; /* Use the color you prefer */
-    color: #000000;
+input[type='submit']:hover {
+    background-color: #a53c3c;
 }
 
-.text-section p {
-    margin-bottom: 10px;
-    color: #090000;
+/* Estilo opcional para mejorar el layout de las etiquetas */
+form p {
+    margin-top: 0;
+    color: #666;
+    font-size: 16px;
 }
 
-.text-section button {
-    background-color: #8c0505; /* Use the color you prefer */
-    border: none;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: #ffffff;
-}
 
-/* You can also add responsiveness */
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Organiza los hijos en una columna */
-        justify-content: center; /* Alinea los hijos al inicio del contenedor */
-        align-items: center; /* Centra los hijos horizontalmente */
-        display: grid;
-        grid-template-columns: 1fr auto; /* la imagen toma el espacio necesario y el texto lo que sobra */
-        gap: 10px;/* Elimina el espacio entre la imagen y el texto */
-    }
-
-    .image-section img,
-    .text-section {
-        width: 100%; /* Usa el ancho completo para ambos, imagen y texto */
-
-    }
-
-    .image-section {
-        max-width: none; /* Permite que la imagen se expanda */
-        overflow: hidden;
-        align-items: center;
-    }
-
-    img {
-        width: max-content; /* Ajusta la imagen para que ocupe el ancho disponible */
-        height: auto; /* Mantiene la relación de aspecto de la imagen */
-        align-self: center;
-    }
-}
-
-.card {
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 20px;
-    padding: 20px;
-    width: 300px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.card img {
-    max-width: 100px;
-    margin: 0 auto;
-    display: block;
-}
-
-.card h3 {
-    color: #8c0505;
-}
-
-.card p {
-    color: #333;
-    font-size: 14px;
-}
-
-.card a {
-    text-decoration: none;
-    color: #8c0505;
-    font-weight: bold;
-}
 .testimonials {
     text-align: center;
-    padding: 50px 20px;
+    max-width: 600px; /* O el ancho que prefieras */
+    margin: 0 auto;
 }
 
 .testimonials h2 {
     color: #333;
+    text-align: center;
     margin-bottom: 20px;
 }
-
-.comentarios-cont {
-    margin-bottom: 20px;
+.testimonials-container {
+    position: relative;
+    overflow: hidden;
 }
 
-.comentarios {
-    margin-bottom: 10px;
+.testimonials-scroll {
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
-.testimonial-avatar {
-    width: 80px;
-    border-radius: 50%;
-    margin: auto;
+.testimonial {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.testimonial-content {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.message {
+    font-size: 0.9em;
 }
 
 .comentarios h3 {
@@ -332,11 +272,13 @@ header, nav, main, footer {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "Footlight MT Light", sans-serif;
     font-size: 1em;
+    text-decoration: none;
 }
 
 .button-comment:hover {
-    background-color: #4cae4c;
+    background-color: #b4055f;
 }
 .site-footer {
     background-color: #333;
@@ -389,6 +331,5 @@ header, nav, main, footer {
 }
 
 .read-more-btn:hover {
-    background-color: #1f6404;
+    background-color: #b4055f;
 }
-

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CrossFit URJC</title> <!-- Título de la pestaña del navegador -->
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -23,7 +23,7 @@
             <li><a href="#login">Login</a></li>
         </ul>
     </nav>
-    <script src="../static/menu.js"></script>
+    <script src="JS/menu.js"></script>
 </header>
 <div class="content-container">
 <div class="imagen-in">
@@ -35,7 +35,7 @@
 
 <div class="container">
     <div class="image-section">
-        <img src="../static/img_2.jpg" alt="Gym Image" />
+        <img src="imagenes/img_2.jpg" alt="Gym Image" />
     </div>
     <div class="text-section">
         <h2>The Club</h2>
@@ -46,55 +46,38 @@
 </div>
     <div class="container">
         <div class="card">
-            <img src="../static/WOD.png" alt="WOD">
+            <img src="imagenes/WOD.png" alt="WOD">
             <h3>WOD</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam sapiente libero</p>
             <a href="#">Learn More</a>
         </div>
 
         <div class="card">
-            <img src="../static/weightlifting.jpg" alt="Alterofilia">
+            <img src="imagenes/weightlifting.jpg" alt="Alterofilia">
             <h3>Halterofilia</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam sapiente libero</p>
             <a href="#">Learn More</a>
         </div>
 
         <div class="card">
-            <img src="../static/gimnasticoa.png" alt="Gimnásticos">
+            <img src="imagenes/gimnasticoa.png" alt="Gimnásticos">
             <h3>Gimnásticos</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam sapiente libero</p>
             <a href="#">Learn More</a>
         </div>
     </div>
 
-    <section class="testimonials">
-        <h2>Comentarios</h2>
-        <div class="comentarios-cont">
-            <div class="comentarios">
-                {{#each comments}}
-                <div class="comentario">
-                    <p>{{this.user}}: {{this.title}}</p>
-                    <p>{{this.text}}</p>
-                </div>
-                {{/each}}
-            </div>
-        </div>
-        <div class="comentarios-nav">
-            <!-- Generar un punto de navegación por cada comentario -->
-            {{#each comments}}
-            <span class="nav-dot"></span>
-            {{/each}}
-        </div>
-        <button class="button-comment"><a href="newCom.html">Comentar</a> </button>
-    </section>
 
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-column">
                 <h3>Sobre nosotros</h3>
-                <button class="read-more-btn">Read More</button>
+                <button class="read-more-btn"><a href="#SobreNosotros">Read More</a></button>
             </div>
-
+            <div class="footer-column">
+                <h3>Queremos saber tu opinion</h3>
+                <button class="read-more-btn"><a href="/comments">Comenta</a></button>
+            </div>
             <div class="footer-column">
                 <h3>Menu</h3>
                 <ul>

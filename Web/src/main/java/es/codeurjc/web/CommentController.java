@@ -21,20 +21,20 @@ public class CommentController {
 		comments.add(new Comment("Juan", "Compro coche", "Pago bien"));
 	}
 
-	@GetMapping("/comment")
+	@GetMapping("/comments")
 	public String showComments(Model model) {
-		// Se calcula la cantidad de puntos de navegación
-		int navigationDots = 4; // Por ejemplo, si hay 4 puntos de navegación
+
+		int navigationDots = comments.size();
 		List<Comment> limitedPosts = new ArrayList<>();
 
 		// Se limitan los posts a la cantidad de puntos de navegación
-		for (int i = 0; i < navigationDots && i < comments.size(); i++) {
+		for (int i = 0; i < navigationDots; i++) {
 			limitedPosts.add(comments.get(i));
 		}
 
 		// Se añade la lista limitada de posts al modelo
 		model.addAttribute("comments", limitedPosts);
-		return "index";
+		return "comments";
 	}
 
 	@PostMapping("/comments/new")
