@@ -40,7 +40,7 @@ public class CommentController {
 	@PostMapping("/comments/new")
 	public String addComment(@ModelAttribute Comment comment) {
 		comments.add(comment);
-		return "redirect:/";
+		return "redirect:/comments";
 	}
 
 	@GetMapping("/comments/{numCom}")

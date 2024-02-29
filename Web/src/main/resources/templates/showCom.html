@@ -1,13 +1,41 @@
 <html>
+<head>
+	<meta charset="UTF-8">
+	<title>CrossFit URJC</title> <!-- Título de la pestaña del navegador -->
+	<link rel="stylesheet" href="/css/commentsStyle.css">
+
+</head>
+
 <body>
-	<p>User: {{comment.user}}</p>
-	<p>Title: {{comment.title}}</p>
-	<p>Text: {{comment.text}}</p>
-	
-	<a href="/post/{{numCom}}/delete">Delete comment</a>
-	
-	<br>
-	
-	<a href="/">Back</a>
+<header>
+	<h1 class="titulo-fondo"><a href="/">CrossFit URJC</a></h1> <!-- Título de la página antes del menú -->
+	<div class="icono-menu">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
+	<nav>
+		<ul class="cont-menu">
+			<li><a href="#programacion">Programación</a></li>
+			<li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+			<li><a href="#atrevete">Atrévete</a></li>
+			<li><a href="#login">Login</a></li>
+		</ul>
+	</nav>
+	<script src="JS/menu.js"></script>
+</header>
+<div class="comment-container">
+	<div class="comment-header">
+		<h2>User: {{ comment.user }}</h2>
+		<h3>Title: {{ comment.title }}</h3>
+	</div>
+	<div class="comment-body">
+		<p>{{ comment.text }}</p>
+	</div>
+	<div class="comment-actions">
+		<a href="/comments/{{ numCom }}/delete" class="btn-delete">Delete comment</a>
+		<a href="/comments" class="btn-back">Back</a>
+	</div>
+</div>
 </body>
 </html>

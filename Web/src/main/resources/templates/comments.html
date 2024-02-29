@@ -2,12 +2,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>CrossFit URJC</title>
-	<link rel="stylesheet" href="/static/css/commentsStyle.css">
+	<link rel="stylesheet" href="/css/commentsStyle.css">
 
 </head>
 <body>
 <header>
-	<h1 class="titulo-fondo">CrossFit URJC</h1> <!-- Título de la página antes del menú -->
+	<h1 class="titulo-fondo"><a href="/">CrossFit URJC</a></h1> <!-- Título de la página antes del menú -->
 	<div class="icono-menu">
 		<div class="line"></div>
 		<div class="line"></div>
@@ -47,7 +47,9 @@
 			</div>
 		</div>
 	</section>
+
 	<div>
+		<h2>Publica tu experiencia</h2>
 		<form action="comments/new" method="post">
 		<p>User: </p>
 		<input type='text' name='user'/>
@@ -66,7 +68,7 @@
 	<div class="footer-container">
 		<div class="footer-column">
 			<h3>Sobre nosotros</h3>
-			<button class="read-more-btn"><a href="#SobreNosotros">Read More</a></button>
+			<button class="read-more-btn"><a class="read-more-link" href="#SobreNosotros">Read More</a></button>
 		</div>
 
 		<div class="footer-column">
